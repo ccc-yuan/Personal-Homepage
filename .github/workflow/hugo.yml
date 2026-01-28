@@ -2,39 +2,32 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: ["master"] # 如果你的主分支叫 main，请改为 main
+    branches: ["master"] # 确认你的分支确实叫 master
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.128.0 # 建议与你本地版本接近
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: recursive # 关键：递归拉取主题
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: ${{ env:HUGO_VERSION }}
-          extended: true
-      - name: Build with Hugo
+          hugo-version: 'latest'
+          extended: true # 必须开启 extended 模式
+
+      - name: Build
         run: hugo --minify
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
