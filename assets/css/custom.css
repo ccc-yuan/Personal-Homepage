@@ -1,0 +1,98 @@
+/* 强制全站使用动态 SVG 背景 */
+body {
+    background-image: url('/lavalamp.svg'); /* 对应 static 里的文件 */
+    background-size: cover;       /* 铺满全屏 */
+    background-attachment: fixed; /* 背景固定，滚动页面时背景不动 */
+    background-position: center;  /* 居中显示 */
+    background-repeat: no-repeat; /* 不重复 */
+}
+
+/* 为了防止文章文字看不清，给内容区域加一点点半透明黑底 (可选) */
+/* 如果觉得不需要，可以删掉下面这一段 */
+article{
+    backdrop-filter: blur(2px); /* 稍微模糊一下背景 */
+}
+
+/* =========================================
+   Part 1: 首页文章卡片 (保持不动，完美版)
+   ========================================= */
+.article-link--card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    position: relative; z-index: 1; overflow: hidden;
+}
+html:not(.dark) .article-link--card {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1); color: #1a202c !important;
+}
+html.dark .article-link--card {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15); color: #f7fafc !important;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+.article-link--card:hover { transform: translateY(-6px); z-index: 10; }
+html:not(.dark) .article-link--card:hover { 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); border-color: rgba(0, 0, 0, 0.2); 
+}
+html.dark .article-link--card:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); 
+    border-color: rgba(255, 255, 255, 0.5); background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+/* =========================================
+   Part 2: 文章正文页 (净化修复版)
+   ========================================= */
+
+/* 1. 只给最外层容器加背景 */
+article:has(.article-content) {
+    padding: 2.5rem; border-radius: 1rem;
+    max-width: 100%; margin: 0 auto;
+    
+    /* 这里只给最外层加一次毛玻璃，绝不叠加 */
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+
+/* 2. 强力清洗：把文章内部所有的 div, section, p 的背景全部设为透明 
+   这能消灭那个讨厌的“内部矩形”！
+*/
+article:has(.article-content) > div,
+article:has(.article-content) section,
+article:has(.article-content) .prose {
+    background-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 3. 白天模式：只剩这一层淡淡的白纸 */
+html:not(.dark) article:has(.article-content) {
+    background-color: rgba(255, 255, 255, 0.85); 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 4. 黑夜模式：只剩这一层淡淡的黑玻璃 */
+html.dark article:has(.article-content) {
+    background-color: rgba(0, 0, 0, 0.5); /* 调低到 0.5，让它更通透 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   Part 3: 悬浮音乐播放器 (保持不动)
+   ========================================= */
+.music-btn {
+    position: fixed; bottom: 20px; left: 20px; width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; cursor: pointer; z-index: 9999;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+.music-btn svg { width: 24px; height: 24px; transition: all 0.5s ease; }
+html:not(.dark) .music-btn { background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0,0,0,0.1); color: #333; }
+html.dark .music-btn { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255,255,255,0.2); color: #fff; }
+.music-btn:hover { transform: scale(1.1); }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.music-btn.playing svg { animation: spin 3s linear infinite; color: #10b981; }
+
+/* 全局去下划线 */
+a { text-decoration: none !important; }
+
+

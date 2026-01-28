@@ -1,0 +1,23 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f4c5c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#052e38;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e36414;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#9a031e;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="url(#grad1)"/>
+  
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1920" height="1080" fill="url(#grid)" />
+
+  <path fill="url(#grad2)" d="M0,800 C300,700 600,900 960,850 C1320,800 1620,700 1920,750 L1920,1080 L0,1080 Z" />
+  
+  <path fill="rgba(255, 187, 59, 0.3)" d="M0,850 C400,900 800,800 1200,880 C1600,960 1800,900 1920,920 L1920,1080 L0,1080 Z" />
+</svg>

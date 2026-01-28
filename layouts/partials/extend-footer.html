@@ -1,0 +1,51 @@
+<audio id="music-player" loop>
+    <source src="/bgm.mp3" type="audio/mpeg">
+</audio>
+
+<div id="music-btn" class="music-btn" onclick="toggleMusic()">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        
+        <g transform="translate(-2, 0.5)">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </g>
+        
+    </svg>
+</div>
+
+<script>
+    var player = document.getElementById("music-player");
+    var btn = document.getElementById("music-btn");
+    var isPlaying = false;
+
+    function toggleMusic() {
+        // 增加一个非空判断，防止报错
+        if (!player || !btn) return;
+
+        if (isPlaying) {
+            player.pause();
+            btn.classList.remove("playing");
+            isPlaying = false;
+        } else {
+            // 增加用户交互的 Promise 处理
+            var playPromise = player.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    btn.classList.add("playing");
+                    isPlaying = true;
+                })
+                .catch(error => {
+                    console.log("播放被阻止，等待用户交互");
+                });
+            }
+        }
+    }
+    
+    // 键盘快捷键 M
+    document.addEventListener('keydown', function(event) {
+        if (event.code === 'KeyM' && !event.ctrlKey && !event.altKey) {
+            toggleMusic();
+        }
+    });
+</script>
