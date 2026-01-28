@@ -16,17 +16,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: false  # 暂时设为 false，因为我们刚才手动 add 了
+          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          # 放弃 'latest' 关键字，直接写死目前最稳的最新版本号
+          hugo-version: '0.142.0' 
           extended: true
 
-      - name: Build
-        # 强制指定主题，防止 config 里的路径配置失效
+      - name: Build with Hugo
+        # 强制指定主题名，确保它能找到 themes/blowfish
         run: hugo --theme blowfish --minify
 
       - name: Upload artifact
