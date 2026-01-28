@@ -1,11 +1,3 @@
-/* 强制全站使用动态 SVG 背景 */
-body {
-    background-image: url('/lavalamp.svg'); /* 对应 static 里的文件 */
-    background-size: cover;       /* 铺满全屏 */
-    background-attachment: fixed; /* 背景固定，滚动页面时背景不动 */
-    background-position: center;  /* 居中显示 */
-    background-repeat: no-repeat; /* 不重复 */
-}
 
 /* 为了防止文章文字看不清，给内容区域加一点点半透明黑底 (可选) */
 /* 如果觉得不需要，可以删掉下面这一段 */
