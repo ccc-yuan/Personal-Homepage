@@ -1,0 +1,14 @@
+{{ $pdf := .Page.Resources.GetMatch (.Get "name") }}
+{{ if $pdf }}
+<div class="embed-pdf-container" style="margin: 20px 0;">
+    <embed 
+        src="{{ $pdf.RelPermalink }}" 
+        type="application/pdf" 
+        width="{{ .Get "width" | default "100%" }}" 
+        height="{{ .Get "height" | default "600px" }}"
+    >
+</div>
+{{ else }}
+<div style="color: red; border: 1px dashed red; padding: 10px;">
+</div>
+{{ end }}
