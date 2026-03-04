@@ -99,3 +99,10 @@ nativeTableOfContents: false # 设置为 true 则目录显示在正文上方
 我大概率会写一份关于这门课的学习笔记，这里附上跳转链接：[隐私计算与数据合规](https://ccc-yuan.github.io/Personal-Homepage/posts/%E9%9A%90%E7%A7%81%E8%AE%A1%E7%AE%97%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%90%88%E8%A7%84/)
 
 ![alt text](ca42bb859ae105a0db5ccee9c9608d24.png)
+
+## 中国改革开放史
+
+### 叶建亮
+
+没抵御住元宵节的诱惑，加之csj先生对于本课程第一次课不签到的承诺，没去，然后直接通知每节课都要签到，悲。
+![alt text](image-5.png)
