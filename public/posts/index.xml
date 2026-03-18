@@ -9,7 +9,37 @@
     <managingEditor>584235526@qq.com (ccc-yuan)</managingEditor>
     <webMaster>584235526@qq.com (ccc-yuan)</webMaster>
     <copyright>© 2026 ccc-yuan</copyright>
-    <lastBuildDate>Tue, 03 Mar 2026 13:41:46 +0800</lastBuildDate><atom:link href="http://localhost:1313/Personal-Homepage/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Mar 2026 14:29:11 +0800</lastBuildDate><atom:link href="http://localhost:1313/Personal-Homepage/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>实验设计与心理统计Ⅱ</title>
+      <link>http://localhost:1313/Personal-Homepage/posts/%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E7%BB%9F%E8%AE%A1/</link>
+      <pubDate>Mon, 16 Mar 2026 14:29:11 +0800</pubDate>
+      <author>584235526@qq.com (ccc-yuan)</author>
+      <guid>http://localhost:1313/Personal-Homepage/posts/%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BF%83%E7%90%86%E7%BB%9F%E8%AE%A1/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>经济心理学</title>
+      <link>http://localhost:1313/Personal-Homepage/posts/%E7%BB%8F%E6%B5%8E%E5%BF%83%E7%90%86%E5%AD%A6/</link>
+      <pubDate>Wed, 11 Mar 2026 16:12:14 +0800</pubDate>
+      <author>584235526@qq.com (ccc-yuan)</author>
+      <guid>http://localhost:1313/Personal-Homepage/posts/%E7%BB%8F%E6%B5%8E%E5%BF%83%E7%90%86%E5%AD%A6/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Diary</title>
+      <link>http://localhost:1313/Personal-Homepage/posts/diary/</link>
+      <pubDate>Mon, 09 Mar 2026 16:14:19 +0800</pubDate>
+      <author>584235526@qq.com (ccc-yuan)</author>
+      <guid>http://localhost:1313/Personal-Homepage/posts/diary/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>隐私计算与数据合规</title>
@@ -27,16 +57,6 @@
       <pubDate>Mon, 02 Mar 2026 10:24:13 +0800</pubDate>
       <author>584235526@qq.com (ccc-yuan)</author>
       <guid>http://localhost:1313/Personal-Homepage/posts/%E8%AF%BE%E7%A8%8B%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>这里写你的文章标题</title>
-      <link>http://localhost:1313/Personal-Homepage/posts/my-post-url/</link>
-      <pubDate>Thu, 01 Feb 2024 10:00:00 +0800</pubDate>
-      <author>584235526@qq.com (ccc-yuan)</author>
-      <guid>http://localhost:1313/Personal-Homepage/posts/my-post-url/</guid>
       <description></description>
       
     </item>
